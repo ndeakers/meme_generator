@@ -19,31 +19,43 @@ document.addEventListener('DOMContentLoaded', function () {
         bottomtextDiv.classList.add('bottomText');
 
         let img = document.createElement('img');
+        let removeBtn = document.createElement('button');
+        removeBtn.innerText = 'Remove';
+        removeBtn.addEventListener('click', function (e) {
+            e.target.parentElement.remove();
+        });
+
         img.src = image.value;
-        img.style.width = '400px';
+        img.style.width = '450px';
+        // img.style.height = '350px';
+        img.style.margin = '40px 40px 40px 40px';
+
 
         bottomtextDiv.innerText = bottomText.value;
         toptextDiv.innerText = topText.value;
         newDiv.appendChild(img);
         newDiv.appendChild(toptextDiv);
         newDiv.appendChild(bottomtextDiv);
+        newDiv.appendChild(removeBtn);
 
 
-        newDiv.style.width = '400px';
-        newDiv.style.margin = '0';
+
+        newDiv.style.width = '600px';
         newDiv.style.display = 'flex';
+        newDiv.style.flex = 'wrap';
         newDiv.style.justifyContent = 'center';
-        img.style.textAlign = 'center';
+        newDiv.style.margin = '25px 25px 25px 25px'
+        // img.style.textAlign = 'center';
         img.style.position = 'relative';
 
 
         toptextDiv.style.fontFamily = "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif";
         toptextDiv.style.fontSize = '2.5rem';
-        toptextDiv.style.textShadow = '-1px 1px 0 #000, 1px 1px 0 #000, 1px -1px 0 #000,-1px -1px 0 #000;'
+        toptextDiv.style.textShadow = "2px 2px #000000, 2px 2px #000000, 2px 2px #000000, 2px 2px #000000";
         toptextDiv.style.position = 'absolute';
         toptextDiv.style.color = 'white';
         toptextDiv.style.textAlign = 'center';
-        toptextDiv.style.top = '5%'
+        toptextDiv.style.top = '10%'
         // toptextDiv.style.left = '0%';
         toptextDiv.style.display = 'flex';
         // toptextDiv.style.justifyContent = 'space-around';
@@ -52,11 +64,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         bottomtextDiv.style.color = 'white';
         bottomtextDiv.style.fontFamily = "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif";
+        bottomtextDiv.style.textShadow = "2px 2px #000000, 2px 2px #000000, 2px 2px #000000, 2px 2px #000000";
         bottomtextDiv.style.fontSize = '2.5rem';
         bottomtextDiv.style.position = 'absolute';
         bottomtextDiv.style.textAlign = 'center';
         // bottomtextDiv.style.width = '50%';
-        bottomtextDiv.style.bottom = '5%';
+        bottomtextDiv.style.bottom = '10%';
         // bottomtextDiv.style.left = '5%';
 
         bottomtextDiv.style.display = 'flex';
@@ -73,7 +86,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // toptextDiv.appendChild(topText.value);
 
-
+        form.reset();
     })
+
 })
 
