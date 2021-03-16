@@ -12,30 +12,18 @@ document.addEventListener('DOMContentLoaded', function () {
         let newDiv = document.createElement('div');
         let section = document.querySelector('section');
         section.appendChild(newDiv);
-        newDiv.style.position = 'relative';
         let toptextDiv = document.createElement('div');
         toptextDiv.classList.add('topText')
         let bottomtextDiv = document.createElement('div');
         bottomtextDiv.classList.add('bottomText');
         let img = document.createElement('img');
 
-
-
         newDiv.addEventListener('mouseenter', function (e) {
-            console.log(e);
             let del = document.createElement('button');
             del.innerText = 'ERMAHGERD DELETE THIS';
             del.classList.add('Remove');
             e.target.appendChild(del);
-            del.style.position = 'absolute';
-            del.style.fontSize = '1.5rem';
-            del.style.textAlign = 'center';
-            del.style.color = 'white';
-            del.style.display = 'flex';
-            del.style.justifyContent = 'center';
-            del.style.alignSelf = 'center';
-            del.style.backgroundColor = 'black';
-            del.style.fontFamily = "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif";
+            buttonStyle(del);
 
             del.addEventListener('click', function (e) {
                 e.target.parentElement.remove();
@@ -47,13 +35,11 @@ document.addEventListener('DOMContentLoaded', function () {
             })
         });
 
-
-
         img.src = image.value;
         img.style.width = '450px';
         img.style.margin = '20px 20px 20px 20px';
         img.style.boxSizing = "BorderBox";
-
+        img.style.position = 'relative';
 
         bottomtextDiv.innerText = bottomText.value;
         toptextDiv.innerText = topText.value;
@@ -61,40 +47,49 @@ document.addEventListener('DOMContentLoaded', function () {
         newDiv.appendChild(toptextDiv);
         newDiv.appendChild(bottomtextDiv);
 
-
-
-
-        newDiv.style.width = '450px';
-        newDiv.style.display = 'flex';
-        newDiv.style.flex = 'wrap';
-        newDiv.style.justifyContent = 'center';
-        newDiv.style.boxSizing = 'borderbox';
-        img.style.position = 'relative';
-
-
-        toptextDiv.style.fontFamily = "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif";
-        toptextDiv.style.fontSize = '2.5rem';
-        toptextDiv.style.textShadow = "2px 2px #000000, 2px 2px #000000, 2px 2px #000000, 2px 2px #000000";
-        toptextDiv.style.position = 'absolute';
-        toptextDiv.style.color = 'white';
-        toptextDiv.style.textAlign = 'center';
-        toptextDiv.style.top = '4%'
-        toptextDiv.style.display = 'flex';
-        toptextDiv.style.alignSelf = 'center';
-
-        bottomtextDiv.style.color = 'white';
-        bottomtextDiv.style.fontFamily = "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif";
-        bottomtextDiv.style.textShadow = "2px 2px #000000, 2px 2px #000000, 2px 2px #000000, 2px 2px #000000";
-        bottomtextDiv.style.fontSize = '2.5rem';
-        bottomtextDiv.style.position = 'absolute';
-        bottomtextDiv.style.textAlign = 'center';
+        containerDivStyle(newDiv);
+        textDivStyle(toptextDiv);
+        textDivStyle(bottomtextDiv);
+        toptextDiv.style.top = '4%';
         bottomtextDiv.style.bottom = '4%';
-
-        bottomtextDiv.style.display = 'flex';
-        bottomtextDiv.style.alignSelf = 'center';
 
         form.reset();
     })
 
-})
+    function containerDivStyle(container) {
+        container.style.width = '450px';
+        container.style.display = 'flex';
+        container.style.flex = 'wrap';
+        container.style.justifyContent = 'center';
+        container.style.boxSizing = 'borderbox';
+        container.style.position = 'relative';
+        return container;
+    }
+
+    function buttonStyle(button) {
+        button.style.position = 'absolute';
+        button.style.fontSize = '1.5rem';
+        button.style.textAlign = 'center';
+        button.style.color = 'white';
+        button.style.display = 'flex';
+        button.style.justifyContent = 'center';
+        button.style.alignSelf = 'center';
+        button.style.backgroundColor = 'black';
+        button.style.fontFamily = "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif";
+        button.style.borderRadius = '5%';
+        return button;
+    }
+
+    function textDivStyle(textDiv) {
+        textDiv.style.color = 'white';
+        textDiv.style.fontFamily = "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif";
+        textDiv.style.textShadow = "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black";
+        textDiv.style.fontSize = '2.5rem';
+        textDiv.style.position = 'absolute';
+        textDiv.style.textAlign = 'center';
+        textDiv.style.display = 'flex';
+        textDiv.style.alignSelf = 'center';
+        return textDiv;
+    }
+});
 
