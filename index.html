@@ -11,24 +11,27 @@
 </head>
 
 <body>
-    <header>
-        <h1>Make That Meme!</h1>
-    </header>
-    <form id="form">
-        <div class="enter_img_box">
-            <input type='text' name="enter_img" id="enter_img" placeholder="Enter Your Image!" class="input">
-        </div>
-        <div class="top_text_box">
-            <input type="text" name="top_text" id="top_text" placeholder="Enter Top Text!" class="input">
-        </div>
-        <div class="bottom_text_box">
-            <input type="text" name="bottom_text" id="bottom_text" placeholder="Enter Bottom Text!" class="input">
-        </div>
-        <div class="button_box">
-            <input type="submit" id="submit" value="Generate">
-        </div>
+    <div id="top_container">
+        <header>
+            <h1>Make That Meme</h1>
+        </header>
+        <form id="form">
+            <div class="enter_img_box">
+                <input type='text' name="enter_img" id="enter_img" placeholder="Enter Your Image URL Here"
+                    class="input">
+            </div>
+            <div class="top_text_box">
+                <input type="text" name="top_text" id="top_text" placeholder="Enter Top Text" class="input">
+            </div>
+            <div class="bottom_text_box">
+                <input type="text" name="bottom_text" id="bottom_text" placeholder="Enter Bottom Text" class="input">
+            </div>
+            <div class="button_box">
+                <input type="submit" id="submit" value="Generate">
+            </div>
 
-    </form>
+        </form>
+    </div>
     <section id="memes">
     </section>
 

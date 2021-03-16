@@ -19,16 +19,42 @@ document.addEventListener('DOMContentLoaded', function () {
         bottomtextDiv.classList.add('bottomText');
 
         let img = document.createElement('img');
-        let removeBtn = document.createElement('button');
-        removeBtn.innerText = 'Remove';
-        removeBtn.addEventListener('click', function (e) {
-            e.target.parentElement.remove();
+
+
+
+        newDiv.addEventListener('mouseenter', function (e) {
+            console.log(e);
+            let del = document.createElement('button');
+            del.innerText = 'Delete';
+            del.classList.add('Remove');
+            e.target.appendChild(del);
+            del.style.position = 'absolute';
+            del.style.fontSize = '1.5rem';
+            del.style.textAlign = 'center';
+            del.style.color = 'white';
+            del.style.display = 'flex';
+            del.style.justifyContent = 'center';
+            del.style.alignSelf = 'center';
+            del.style.backgroundColor = 'black';
+            del.style.fontFamily = "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif";
+
+            del.addEventListener('click', function (e) {
+                e.target.parentElement.remove();
+            });
+
+            newDiv.addEventListener('mouseleave', function (e) {
+                del.remove();
+
+            })
         });
+
+
 
         img.src = image.value;
         img.style.width = '450px';
         // img.style.height = '350px';
-        img.style.margin = '40px 40px 40px 40px';
+        img.style.margin = '20px 20px 20px 20px';
+        img.style.boxSizing = "BorderBox";
 
 
         bottomtextDiv.innerText = bottomText.value;
@@ -36,15 +62,16 @@ document.addEventListener('DOMContentLoaded', function () {
         newDiv.appendChild(img);
         newDiv.appendChild(toptextDiv);
         newDiv.appendChild(bottomtextDiv);
-        newDiv.appendChild(removeBtn);
 
 
 
-        newDiv.style.width = '600px';
+
+        newDiv.style.width = '450px';
         newDiv.style.display = 'flex';
         newDiv.style.flex = 'wrap';
         newDiv.style.justifyContent = 'center';
-        newDiv.style.margin = '25px 25px 25px 25px'
+        // newDiv.style.margin = '5px 5px 5px 5px';
+        newDiv.style.boxSizing = 'borderbox';
         // img.style.textAlign = 'center';
         img.style.position = 'relative';
 
