@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
         toptextDiv.classList.add('topText')
         let bottomtextDiv = document.createElement('div');
         bottomtextDiv.classList.add('bottomText');
-
         let img = document.createElement('img');
 
 
@@ -25,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
         newDiv.addEventListener('mouseenter', function (e) {
             console.log(e);
             let del = document.createElement('button');
-            del.innerText = 'Delete';
+            del.innerText = 'ERMAHGERD DELETE THIS';
             del.classList.add('Remove');
             e.target.appendChild(del);
             del.style.position = 'absolute';
@@ -52,7 +51,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         img.src = image.value;
         img.style.width = '450px';
-        // img.style.height = '350px';
         img.style.margin = '20px 20px 20px 20px';
         img.style.boxSizing = "BorderBox";
 
@@ -70,9 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
         newDiv.style.display = 'flex';
         newDiv.style.flex = 'wrap';
         newDiv.style.justifyContent = 'center';
-        // newDiv.style.margin = '5px 5px 5px 5px';
         newDiv.style.boxSizing = 'borderbox';
-        // img.style.textAlign = 'center';
         img.style.position = 'relative';
 
 
@@ -82,12 +78,9 @@ document.addEventListener('DOMContentLoaded', function () {
         toptextDiv.style.position = 'absolute';
         toptextDiv.style.color = 'white';
         toptextDiv.style.textAlign = 'center';
-        toptextDiv.style.top = '10%'
-        // toptextDiv.style.left = '0%';
+        toptextDiv.style.top = '4%'
         toptextDiv.style.display = 'flex';
-        // toptextDiv.style.justifyContent = 'space-around';
         toptextDiv.style.alignSelf = 'center';
-        // toptextDiv.style.width = '100%';
 
         bottomtextDiv.style.color = 'white';
         bottomtextDiv.style.fontFamily = "Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif";
@@ -95,23 +88,10 @@ document.addEventListener('DOMContentLoaded', function () {
         bottomtextDiv.style.fontSize = '2.5rem';
         bottomtextDiv.style.position = 'absolute';
         bottomtextDiv.style.textAlign = 'center';
-        // bottomtextDiv.style.width = '50%';
-        bottomtextDiv.style.bottom = '10%';
-        // bottomtextDiv.style.left = '5%';
+        bottomtextDiv.style.bottom = '4%';
 
         bottomtextDiv.style.display = 'flex';
         bottomtextDiv.style.alignSelf = 'center';
-
-
-
-
-
-
-
-
-
-
-        // toptextDiv.appendChild(topText.value);
 
         form.reset();
     })
